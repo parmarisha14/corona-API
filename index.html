@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <title>COVID-19 India Tracker</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #343a40;
+      font-weight: bold;
+    }
+
+    .card-counter {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      border-radius: 15px;
+      padding: 30px 20px;
+      color: #fff;
+      margin-bottom: 30px;
+      transition: transform 0.2s;
+    }
+
+    .card-counter:hover {
+      transform: scale(1.03);
+    }
+
+    .confirmed {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    }
+
+    .deaths {
+      background: linear-gradient(135deg, #f5576c, #f093fb);
+    }
+
+    .discharged {
+      background: linear-gradient(135deg, #43e97b, #38f9d7);
+    }
+
+    .stat {
+      font-size: 2.2rem;
+      font-weight: bold;
+    }
+
+    #stateSelect {
+      margin: 30px auto;
+      width: 100%;
+      max-width: 350px;
+      font-size: 1rem;
+      padding: 10px 15px;
+      border-radius: 10px;
+      border: 1px solid #ced4da;
+      font-weight: 700;
+    }
+
+    #stateStats {
+      max-width: 450px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      text-align: left;
+      font-weight: 700;
+      background: linear-gradient(135deg, #D9E6F5, #AFD4FF);
+      color:#110529;
+      text-align:center;
+      
+    }
+
+    #stateStats h2 {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+  
+  </style>
+</head>
+<body>
+
+  <h1>COVID-19 India </h1>
+
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="card-counter confirmed">
+          <h3 class="fw-bolder">Total Confirmed</h3>
+          <div id="total" class="stat">Loading...</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-counter deaths">
+          <h3 class="fw-bolder">Total Deaths</h3>
+          <div id="deaths" class="stat">Loading...</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-counter discharged">
+          <h3 class="fw-bolder">Total Discharged</h3>
+          <div id="discharged" class="stat">Loading...</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center ">
+      <h2 class="fw-bold">Select a State</h2>
+      <select id="stateSelect" class="form-select">
+        <option disabled selected>Loading states...</option>
+      </select>
+    </div>
+
+    <div id="stateStats" style="display: none;">
+      <h2 id="stateName"class="fs-1">State Name</h2>
+      <p class="fs-5"><strong>Confirmed:</strong> <span id="stateConfirmed">0</span></p>
+      <p class="fs-5"><strong>Discharged:</strong> <span id="stateDischarged">0</span></p>
+      <p class="fs-5"><strong>Deaths:</strong> <span id="stateDeaths">0</span></p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
